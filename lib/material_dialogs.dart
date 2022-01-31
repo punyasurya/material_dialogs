@@ -32,21 +32,12 @@ class Dialogs {
   /// [context] your parent widget context
   /// [color] dialog background color
 
-  /// [title] your dialog title
-  /// [titleStyle] your dialog title style
-  /// [titleAlign] your dialog title alignment
-  /// [msg] your dialog description message
-  /// [msgStyle] your dialog description style
-  /// [msgAlign] your dialog description alignment
-
   /// [actions] Widgets to display a row of buttons after the [msg] widget.
   /// [onClose] used to listen to dialog close events.
 
   static Future<void> materialDialog({
     required BuildContext context,
     Function(dynamic value)? onClose,
-    String? title,
-    String? msg,
     List<Widget>? actions,
     Widget customView = holder,
     LottieBuilder? lottieBuilder,
@@ -57,10 +48,6 @@ class Dialogs {
     bool useRootNavigator = true,
     RouteSettings? routeSettings,
     ShapeBorder dialogShape = dialogShape,
-    TextStyle titleStyle = titleStyle,
-    TextStyle? msgStyle,
-    TextAlign? titleAlign,
-    TextAlign? msgAlign,
     Color color = bcgColor,
   }) async {
     await showDialog<String>(
@@ -76,15 +63,10 @@ class Dialogs {
           backgroundColor: color,
           shape: dialogShape,
           child: DialogWidget(
-            title: title,
-            msg: msg,
             actions: actions,
             animationBuilder: lottieBuilder,
             customView: customView,
             titleStyle: titleStyle,
-            msgStyle: msgStyle,
-            titleAlign: titleAlign,
-            msgAlign: msgAlign,
             color: color,
           ),
         );

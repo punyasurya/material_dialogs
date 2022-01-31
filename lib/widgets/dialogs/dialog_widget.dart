@@ -63,30 +63,6 @@ class DialogWidget extends StatelessWidget {
             child: animationBuilder,
           ),
         customView,
-        title != null
-            ? Padding(
-                padding: const EdgeInsets.only(right: 20, left: 20, top: 24.0),
-                child: Text(
-                  title!,
-                  style: titleStyle,
-                  textAlign: titleAlign,
-                ),
-              )
-            : SizedBox(
-                height: 4,
-              ),
-        msg != null
-            ? Padding(
-                padding: const EdgeInsets.only(right: 20, left: 20, top: 16.0),
-                child: Text(
-                  msg!,
-                  style: msgStyle,
-                  textAlign: msgAlign,
-                ),
-              )
-            : SizedBox(
-                height: 20,
-              ),
         actions?.isNotEmpty == true
             ? buttons(context)
             : SizedBox(

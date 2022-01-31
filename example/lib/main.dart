@@ -61,8 +61,6 @@ class TestState extends State<TestPage> {
       color: Colors.grey[300],
       minWidth: 300,
       onPressed: () => Dialogs.materialDialog(
-          msg: 'Are you sure ? you can\'t undo this',
-          title: "Delete",
           color: Colors.white,
           context: context,
           actions: [
@@ -125,8 +123,6 @@ class TestState extends State<TestPage> {
       color: Colors.grey[300],
       onPressed: () => Dialogs.materialDialog(
         color: Colors.white,
-        msg: 'Congratulations, you won 500 points',
-        title: 'Congratulations',
         lottieBuilder: Lottie.asset(
           'assets/cong_example.json',
           fit: BoxFit.contain,
