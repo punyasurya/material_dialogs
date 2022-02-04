@@ -7,10 +7,6 @@ import 'package:material_dialogs/widgets/dialogs/dialog_widget.dart';
 export 'package:lottie/lottie.dart';
 
 class Dialogs {
-  ///[titleStyle] can be used to change the dialog title style
-  static const TextStyle titleStyle =
-      const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-
   ///[bcgColor] background default value
   static const Color bcgColor = const Color(0xfffefefe);
 
@@ -64,9 +60,7 @@ class Dialogs {
           shape: dialogShape,
           child: DialogWidget(
             actions: actions,
-            animationBuilder: lottieBuilder,
             customView: customView,
-            titleStyle: titleStyle,
             color: color,
           ),
         );
@@ -85,7 +79,6 @@ class Dialogs {
     LottieBuilder? lottieBuilder,
     bool barrierDismissible = true,
     ShapeBorder dialogShape = BottomSheetShape,
-    TextStyle titleStyle = titleStyle,
     TextStyle? msgStyle,
     Color color = bcgColor,
     bool isScrollControlled = false,
@@ -106,13 +99,8 @@ class Dialogs {
       routeSettings: routeSettings,
       transitionAnimationController: transitionAnimationController,
       builder: (context) => DialogWidget(
-        title: title,
-        msg: msg,
         actions: actions,
-        animationBuilder: lottieBuilder,
         customView: customView,
-        titleStyle: titleStyle,
-        msgStyle: msgStyle,
         color: color,
       ),
     ).then((value) => onClose?.call(value));

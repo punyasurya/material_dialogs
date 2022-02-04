@@ -1,21 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 /// Displays Material dialog above the current contents of the app
 
 class DialogWidget extends StatelessWidget {
   DialogWidget({
     Key? key,
-    this.title,
-    this.msg,
     this.actions,
-    this.animationBuilder,
     this.customView = const SizedBox(),
-    this.titleStyle,
-    this.msgStyle,
-    this.titleAlign,
-    this.msgAlign,
     this.color,
   });
 
@@ -24,27 +16,6 @@ class DialogWidget extends StatelessWidget {
 
   /// [customView] a widget to display a custom widget instead of the animation view.
   final Widget customView;
-
-  /// [title] your dialog title
-  final String? title;
-
-  /// [msg] your dialog description message
-  final String? msg;
-
-  /// [animationBuilder] lottie animations builder
-  final LottieBuilder? animationBuilder;
-
-  /// [titleStyle] dialog title text style
-  final TextStyle? titleStyle;
-
-  /// [animation] lottie animations path
-  final TextStyle? msgStyle;
-
-  /// [titleAlign] dialog title text alignment
-  final TextAlign? titleAlign;
-
-  /// [textAlign] dialog description text alignment
-  final TextAlign? msgAlign;
 
   /// [color] dialog's backgorund color
   final Color? color;
@@ -55,13 +26,6 @@ class DialogWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (animationBuilder != null)
-          Container(
-            padding: EdgeInsets.only(top: 20),
-            height: 200,
-            width: double.infinity,
-            child: animationBuilder,
-          ),
         customView,
         actions?.isNotEmpty == true
             ? buttons(context)
